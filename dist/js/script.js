@@ -12,6 +12,7 @@
     selectorsWrapper.classList.add('selectorsWrapper');
     selectorsWrapper.dataset.select = dataSelect;
     document.body.append(selectorsWrapper);
+    return selectorsWrapper;
   };
 
   const setOptions = (dataSelect) => {
@@ -19,12 +20,14 @@
       for (let j = 0; j < selects[i].length; j += 1) {
         if (selects[i][j].dataset.option === dataSelect) {
           option = document.createElement('div');
-          j === 0 ? option.classList.add('option', 'selected') : option.classList.add('option', 'hide');
+          j === 0 ? option.classList.add('option', 'selected', 'header') : option.classList.add('option', 'hide');
           option.dataset.option = dataSelect;
           option.innerHTML = selects[i][j].innerHTML;
           selectorsWrapper.append(option);
         }
+        
       }
+      console.log(selectorsWrapper.lastChild); //.style.border-top = '1px solid gray';
     }
   };
 
@@ -68,8 +71,9 @@
 
   const dropdownInit = () => {
     for (let i = 0; i < selectWrappers.length; i += 1) {
-      setWrapper(selectWrappers[i].dataset.select);
+      let wrapper = setWrapper(selectWrappers[i].dataset.select);
       setOptions(selectWrappers[i].dataset.select);
+      wrapper.lastChild.classList.add('special');
     }
     createdOptiopns = document.querySelectorAll('.option');
     selectedOptions = document.querySelectorAll('.selected');

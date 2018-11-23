@@ -3,15 +3,35 @@
 }
 
 .selectorsWrapper {
-  width: 25%;
+  width: 10%;
   margin: 10px;
+  color: grey;
+  border: 1px solid gray;
 }
 
 .option {
-  background-color: gray;
+  background-color: white;
   padding: 5px;
 }
 
 .hide {
   display: none;
+}
+
+.selected {
+  background-color: #EAEDFF;
+  color: #637AFE;
+  z-index: 1;
+  border-bottom: 2px solid rgba(168, 168, 168, 0.57);
+  //margin-bottom: 3px;
+}
+
+
+.special {
+  border-top: 1px solid gray;
+}
+
+.header {
+  background-color: white;
+  z-index: 2;
 }
