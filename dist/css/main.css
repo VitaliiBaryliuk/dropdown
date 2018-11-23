@@ -1,0 +1,13 @@
+.custom-select {
+  display: none; }
+
+.selectorsWrapper {
+  width: 25%;
+  margin: 10px; }
+
+.option {
+  background-color: gray;
+  padding: 5px; }
+
+.hide {
+  display: none; }
